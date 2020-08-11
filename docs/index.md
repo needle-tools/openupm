@@ -16,7 +16,39 @@ features:
 noGlobalSocialShare: true
 ---
 
-### Get Started
+### Get Started (by modifying the Package Manifest)
+
+1. In your Unity project folder, go to and open `Packages/manifest.json` with a text editor.
+
+2. Add a scoped registry at the top:
+  ```sh
+  "scopedRegistries": [
+    {
+      "name": "OpenUPM",
+      "url": "https://package.openupm.com",
+      "scopes": [
+        "com.littlebigfun.addressable-importer"
+      ]
+    }
+  ],
+  "dependencies": {
+  ```
+   You can close `manifest.json` now.
+  
+3. Back in Unity, open Package Manager.
+
+   Many packages on OpenUPM are in a "preview" state. To use any of them,
+    - before 2020.1: make sure to enable `Advanced > Show Preview Packages`
+    - 2020.1+: make sure to enable `Project Settings > Package Manager > Enable Preview Packages`
+  
+4. Find & Install the package in PackMan
+    - select "My Registries" in the Registry Dropdown
+    - select `Unity Addressable Importer`
+    - click Install.
+
+### Get Started (using OpenUPM Command Line Helper)
+
+Make sure you have nodejs / npm installed.
 
 ```sh
 # Install openupm-cli
